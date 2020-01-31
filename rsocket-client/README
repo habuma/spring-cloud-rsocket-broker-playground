@@ -1,0 +1,10 @@
+This is a simple spring-cloud-rsocket broker client. It acts as a client to 
+another client that acts as a service (if that makes any sense). It establishes
+a connection to the broker, which relays the connection request to the other
+client which acts as the service. It then reacts to events published by the
+service. 
+
+Run with:
+
+$ ./mvnw spring-boot:run
+

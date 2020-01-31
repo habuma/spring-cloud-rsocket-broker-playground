@@ -1,0 +1,17 @@
+  
+spring.cloud.gateway.rsocket.client:
+  route-id: ${random.int}
+  service-name: refreshing-service
+  tags:
+    INSTANCE_NAME: ${'refreshing-service' + random.int}
+    multicast: true
+  broker:
+    host: localhost
+    port: 7003
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.messaging.rsocket: INFO

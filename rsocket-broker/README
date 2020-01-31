@@ -1,0 +1,7 @@
+This is a simple spring-cloud-rsocket broker. 
+
+Run with:
+
+$ ./mvnw spring-boot:run
+
+It starts up on port 7003.

@@ -1,0 +1,13 @@
+server:
+  port: 0
+
+spring:
+  rsocket:
+    server:
+      port: 7003
+  cloud:
+    gateway:
+      rsocket:
+        id: gateway1
+        route-id: 11
+        service-name: gateway
