@@ -1,0 +1,27 @@
+This is a simple spring-cloud-rsocket broker client. It acts as a service to 
+another client (if that makes any sense).
+
+Build it and run with:
+
+$ ./mvnw package
+$ java -jar target/rsocket-service-0.0.2-SNAPSHOT.jar
+
+It starts up on port 8080 by default. To run multiple instances, run it like
+this:
+
+$ java -jar target/rsocket-service-0.0.2-SNAPSHOT.jar -Dserver.port=8081
+
+(Where 8081 could be any available port number.)
+
+Once it is started and at least one client is available, POST to the /refresh
+endpoint:
+
+$ curl localhost:8080 -X POST
+
+This *should* send a refresh event to the client(s).
+
+PROBLEM: If you start more than one instance of this service, it's a crap
+shoot as to which one a client will send its connection to. If you have two
+instances, one on port 8080 and one on port 8081, the client could connect
+to either. If it connects to the one on port 8080, then a refresh to port
+8081 will never make it to the client.

@@ -4,4 +4,9 @@ Run with:
 
 $ ./mvnw spring-boot:run
 
+Or build it and run with:
+
+$ ./mvnw package
+$ java -jar target/rsocket-broker-0.0.2-SNAPSHOT.jar
+
 It starts up on port 7003.

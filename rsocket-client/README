@@ -4,7 +4,8 @@ a connection to the broker, which relays the connection request to the other
 client which acts as the service. It then reacts to events published by the
 service. 
 
-Run with:
+Build and run with:
 
-$ ./mvnw spring-boot:run
+$ ./mvnw package
+$ java -jar target/rsocket-client-0.0.2-SNAPSHOT.jar
 
